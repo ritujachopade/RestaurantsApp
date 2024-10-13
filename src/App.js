@@ -1,7 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './Login.css';
+import Login from './login';
+import Dashboard from './Dashboard';
 
-function App() {
+
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -15,11 +19,35 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React 
         </a>
       </header>
     </div>
   );
 }
 
+export default App;*/
+
+
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route exact path="/" component={Login} />
+        <Route path="/dashboard" component={Dashboard} />
+      </Routes>
+    </Router>
+  );
+}
+
 export default App;
+
+export const Dashboard = () => {
+  return (
+    <div>
+      <h1>Welcome to the Dashboard!</h1>
+    </div>
+  );
+};
+
